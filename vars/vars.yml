@@ -16,4 +16,4 @@ aptpackages:
 #pippackages:
 #  - hvac
 
-user: oli
+user: azureuser
