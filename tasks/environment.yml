@@ -14,7 +14,7 @@
   tags: aliases
 
 - name: Update OMB .bashrc for custom aliases
-  shell: sed -i '/^aliases=(/ s/)$/\ custom)/' /home/{{ user }}.bashrc
+  shell: sed -i '/^aliases=(/ s/)$/\ custom)/' /home/{{ user }}/.bashrc
 
 - name: Copy .gitconfig
   ansible.builtin.copy:
