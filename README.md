@@ -1,7 +1,13 @@
 # Playbook to set up my Linux workstation
 
+## To Do
+- [ ] Tweak to run on other distros
+- [ ] Customise terminal
+- [ ] Customise Wallpaper
+- [ ] Set up taskbar
+
 ### Pre-requisites
-1. Ubuntu base system
+1. Ubuntu base system ( for now )
 2. Install `git`, `python3-pip`, `python3-venv` , `ansible`
 
 ```bash
@@ -12,16 +18,16 @@ pipx install --include-deps ansible
 ```
 3. Add user to passwordless sudo
 
-```
-
+```bash
+sudo echo "$USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USER
 ```
 4. Fist Use
 
 ```bash
 # Main branch
-sudo ansible-pull -o -U https://github.com/0lzi/workstation-config.git
+ansible-pull -o -U https://github.com/0lzi/workstation-config.git
 
 # Alt branch
-sudo ansible-pull -o -U https://github.com/0lzi/workstation-config.git -C test1
+ansible-pull -o -U https://github.com/0lzi/workstation-config.git -C test1
 
 ```
