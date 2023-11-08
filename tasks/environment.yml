@@ -15,7 +15,7 @@
 
 - name: Copy .gitconfig
   ansible.builtin.copy:
-    src: /files/.gitconfig
+    src: files/.gitconfig
     dest: /home/{{ user }}/.gitconfig
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -23,7 +23,7 @@
 
 - name: Copy .gitconfig_work
   ansible.builtin.copy:
-    src: /files/.gitconfig_work
+    src: files/.gitconfig_work
     dest: /home/{{ user }}/.gitconfig_work
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -31,7 +31,7 @@
 
 - name: Copy ~/.ssh/config
   ansible.builtin.copy:
-    src: /files/config
+    src: files/config
     dest: /home/{{ user }}/.ssh/config
     owner: "{{ user }}"
     group: "{{ user }}"
