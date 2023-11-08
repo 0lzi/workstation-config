@@ -3,4 +3,4 @@
     name: ansible auto-provision
     user: "{{ user }}"
     hour: "10"
-    job: "/usr/bin/ansible-pull -o -U https://github.com/0lzi/workstation-config.git > /dev/null"
+    job: "/home/{{ user }}/.local/bin/ansible-pull -o -U https://github.com/0lzi/workstation-config.git > /dev/null"
