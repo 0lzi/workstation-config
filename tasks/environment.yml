@@ -13,6 +13,12 @@
     mode: '0644'
   tags: aliases
 
+- name: Update OMB .bashrc for custom aliases
+  ansible.builtin.lineinfile:
+    path: /home/{{ user }}/.bashrc
+    regex: 'aliases=\(.*\)'
+    line: 'aliases=(\1 custom)'
+
 - name: Copy .gitconfig
   ansible.builtin.copy:
     src: files/.gitconfig
