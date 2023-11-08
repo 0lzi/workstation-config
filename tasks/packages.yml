@@ -20,12 +20,17 @@
 
 - name: Add sign key for Microsoft
   block:
-    - name: Add Signing Key
-      ansible.builtin.get_url:
+    - name: Add Key
+      ansible.builtin.apt_key:
         url: https://packages.microsoft.com/keys/microsoft.asc
-        dest: /etc/apt/trusted.gpg.d/microsoft.asc # Needs the asc extension
-        mode: '0644'
-        force: true
+        state: present
+
+#    - name: Add Signing Key
+#      ansible.builtin.get_url:
+#        url: https://packages.microsoft.com/keys/microsoft.asc
+#        dest: /etc/apt/trusted.gpg.d/microsoft.asc # Needs the asc extension
+#        mode: '0644'
+#        force: true
 
     - name: Microsoft apt source
       ansible.builtin.apt_repository:
