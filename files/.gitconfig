@@ -1,0 +1,11 @@
+[user]
+	name = 0lzi
+	email = foolishhim@gmail.com
+	signingkey = 9BEBE3357E2F3D29
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+
+[includeIf "gitdir:~/git/"]
+    path = ~/.gitconfig_work

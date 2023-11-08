@@ -1,0 +1,51 @@
+- name: Install packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ aptpackages }}"
+
+- name: Check OhMyBash is installed
+  ansible.builtin.stat:
+    path: /home/{{ user }}/.oh-my-bash
+  register: omb_installed
+
+- name: Install oh-my-bash
+  ansible.builtin.shell: bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh) --unattended"
+  become: false
+  when: not omb_installed.stat.exists
+  register: omb_result
+  changed_when: omh_result.rc != 0
+  ignore_errors: true
+  tags: bash
+
+- name: Add sign key for Microsoft
+  block:
+    - name: Add Key
+      ansible.builtin.apt_key:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+
+#    - name: Add Signing Key
+#      ansible.builtin.get_url:
+#        url: https://packages.microsoft.com/keys/microsoft.asc
+#        dest: /etc/apt/trusted.gpg.d/microsoft.asc # Needs the asc extension
+#        mode: '0644'
+#        force: true
+
+    - name: Microsoft apt source
+      ansible.builtin.apt_repository:
+        repo: deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/microsoft.asc] https://packages.microsoft.com/repos/code stable main
+        state: present
+
+    - name: Install VSCODE
+      ansible.builtin.apt:
+        name: code
+        state: present
+        update_cache: true
+
+#- name: Pip packages
+#  ansible.builtin.pip:
+#    name: "{{ item }}"
+#    state: present
+#  with_items: "{{ pippackages }}"
+#  executable: pip3

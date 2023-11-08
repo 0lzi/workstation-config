@@ -1,0 +1,19 @@
+aptpackages:
+  - htop
+  - sshpass
+  - python3-pip
+  - powerline
+  - fonts-powerline
+  - python3-venv
+  - tree
+  - git
+  - lsof
+  - apt-transport-https
+  - wget
+  - gpg
+
+
+#pippackages:
+#  - hvac
+
+user: azureuser
