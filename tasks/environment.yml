@@ -6,10 +6,10 @@
 
 - name: Copy Custom aliases
   ansible.builtin.copy:
-    src: /files/custom.aliases.sh
-    dest: /home/pi/.oh-my-bash/custom/aliases
-    owner: pi
-    group: pi
+    src: files/custom.aliases.sh
+    dest: /home/{{ user }}/.oh-my-bash/custom/aliases
+    owner: "{{ user }}"
+    group: "{{ user}}"
     mode: '0644'
   tags: aliases
 
