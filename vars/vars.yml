@@ -4,7 +4,7 @@ aptpackages:
   - python3-pip
   - powerline
   - fonts-powerline
-  - python3.10-venv
+  - python3-venv
   - tree
   - git
   - lsof
