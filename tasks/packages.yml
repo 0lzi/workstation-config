@@ -31,7 +31,7 @@
       ansible.builtin.apt_repository:
         repo: >
           deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/microsoft.asc]
-          https://packages.microsoft.com/repos/code stable main"
+          https://packages.microsoft.com/repos/code stable main
         state: present
 
     - name: Install VSCODE
