@@ -11,9 +11,9 @@ aptpackages:
   - apt-transport-https
   - wget
   - gpg
-  
 
-pippackages:
-  - hvac
+
+#pippackages:
+#  - hvac
 
 user: oli

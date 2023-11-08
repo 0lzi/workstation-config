@@ -40,9 +40,9 @@
         state: present
         update_cache: true
 
-- name: Pip packages
-  ansible.builtin.pip:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ pippackages }}"
-  executable: pip3
+#- name: Pip packages
+#  ansible.builtin.pip:
+#    name: "{{ item }}"
+#    state: present
+#  with_items: "{{ pippackages }}"
+#  executable: pip3
