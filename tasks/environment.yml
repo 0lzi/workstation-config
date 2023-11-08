@@ -14,10 +14,7 @@
   tags: aliases
 
 - name: Update OMB .bashrc for custom aliases
-  ansible.builtin.lineinfile:
-    path: /home/{{ user }}/.bashrc
-    regex: '^aliases=\(.*\)'
-    line: 'aliases=(\1 custom)'
+  shell: sed -i '/^aliases=(/ s/)$/\ custom)/' ~/.bashrc
 
 - name: Copy .gitconfig
   ansible.builtin.copy:
