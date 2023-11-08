@@ -1,0 +1,64 @@
+# contents of $HOME/.ssh/config
+
+## Openstack
+
+## Azure
+
+## GCP
+
+## GitHub
+Host github.com
+	User 0lzi
+	IdentityFile ~/.ssh/github
+
+## Gitlab
+
+Host 
+	User Oliver.Kelly
+	IdentityFile ~/.ssh/gitlab_rsa
+
+## SSH Pi  Config ##
+
+Host pi1
+	HostName 192.168.1.16
+	Port 22
+	User pi
+	IdentityFile ~/.ssh/raspberry_rsa
+
+Host pi2
+	HostName 192.168.1.19
+	Port 22
+	User pi
+	IdentityFile ~/.ssh/raspberry_rsa
+
+Host pi3
+	HostName 192.168.1.20
+	Port 22
+	User pi
+	IdentityFile ~/.ssh/raspberry_rsa
+
+Host pi4
+	HostName 192.168.1.21
+	Port 22
+	User pi
+	IdentityFile ~/.ssh/raspberry_rsa
+
+Host pi5
+	HostName 192.168.1.22
+	Port 22
+	User pi
+	IdentityFile ~/.ssh/raspberry_rsa
+
+
+# Linux Servers
+	
+Host *
+	User oliver.kelly
+	CanonicalDomains .local
+	CanonicalizeHostname yes
+	StrictHostKeyChecking accept-new
+
+## Serial Port ##
+
+## Switches ##
+

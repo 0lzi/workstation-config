@@ -1,0 +1,46 @@
+- name: Set oh-my-bash theme
+  ansible.builtin.lineinfile:
+    path: /home/{{ user }} /.bashrc
+    search_string: 'OSH_THEME='
+    line: OSH_THEME="rr"
+
+- name: Copy Custom aliases
+  ansible.builtin.copy:
+    src: /files/custom.aliases.sh
+    dest: /home/pi/.oh-my-bash/custom/aliases
+    owner: pi
+    group: pi
+    mode: '0644'
+  tags: aliases
+
+- name: Copy .gitconfig
+  ansible.builtin.copy:
+    src: /files/.gitconfig
+    dest: /home/{{ user }}/.gitconfig
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0644'
+
+- name: Copy .gitconfig_work
+  ansible.builtin.copy:
+    src: /files/.gitconfig_work
+    dest: /home/{{ user }}/.gitconfig_work
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0644'
+
+- name: Copy ~/.ssh/config
+  ansible.builtin.copy:
+    src: /files/config
+    dest: /home/{{ user }}/.ssh/config
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0644'
+
+- name: Touch .hushlogin
+  ansible.builtin.file:
+    dest: /home/{{ user }}.hushlogin
+    state: touch
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0644'

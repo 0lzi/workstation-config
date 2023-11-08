@@ -1,0 +1,8 @@
+[user]
+	name = oliver.kelly
+	email = oliver.kelly@work-email.com
+	signingkey = 
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
