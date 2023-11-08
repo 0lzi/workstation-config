@@ -10,7 +10,12 @@ sudo apt update && sudo apt install git python3-pip python3-venv -y && python3 -
 # Logout/New session
 pipx install --include-deps ansible 
 ```
-3. Fist Use
+3. Add user to passwordless sudo
+
+```
+
+```
+4. Fist Use
 
 ```bash
 # Main branch

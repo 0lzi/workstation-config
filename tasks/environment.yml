@@ -1,6 +1,6 @@
 - name: Set oh-my-bash theme
   ansible.builtin.lineinfile:
-    path: /home/{{ user }} /.bashrc
+    path: /home/{{ user }}/.bashrc
     search_string: 'OSH_THEME='
     line: OSH_THEME="rr"
 
