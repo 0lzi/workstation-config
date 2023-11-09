@@ -13,6 +13,7 @@ aptpackages:
   - gpg
   - curl
   - openssh-server
+  - dconf-editor
 
 
 #pippackages:
