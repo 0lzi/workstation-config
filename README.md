@@ -10,8 +10,10 @@
 - [ ] Customise terminal
 - [ ] Customise Wallpaper
 - [ ] Add Personal git folder
-    - [ ] Clone some useful repos
 - [ ] Add Work git folder
+- [ ] Create ssh keypairs
+    - github
+    - raspberry pi
 - [ ] Set up taskbar
 - [ ] Tidy up
 
