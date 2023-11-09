@@ -2,6 +2,7 @@
 
 ## To Do
 - [ ] Fix Pip and install pip packages
+- [ ] Add check for .bashrc array so `custom` isn't added every run
 - [ ] Tweak to run on other distros
 - [ ] Customise terminal
 - [ ] Customise Wallpaper
