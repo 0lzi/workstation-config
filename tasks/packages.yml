@@ -14,7 +14,7 @@
   become: false
   when: not omb_installed.stat.exists
   register: omb_result
-  changed_when: omh_result.rc != 0
+  changed_when: omb_result.rc != 0
   ignore_errors: true
   tags: bash
   become: false
