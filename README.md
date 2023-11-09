@@ -1,6 +1,7 @@
 # Playbook to set up my Linux workstation
 
 ## To Do
+- [ ] Fix Pip and install pip packages
 - [ ] Tweak to run on other distros
 - [ ] Customise terminal
 - [ ] Customise Wallpaper
