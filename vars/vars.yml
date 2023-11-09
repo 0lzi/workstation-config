@@ -12,6 +12,7 @@ aptpackages:
   - wget
   - gpg
   - curl
+  - openssh-server
 
 
 #pippackages:
