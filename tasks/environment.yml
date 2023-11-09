@@ -13,8 +13,13 @@
     mode: '0644'
   tags: aliases
 
+# Fix to stop duplicate `custom` entries each time it runs
 - name: Update OMB .bashrc for custom aliases
   shell: sed -i '/  general/ s/$/  \n\  custom/' /home/{{ user }}/.bashrc
+  when: not omb_installed.stat.exists
+  register: omb_result
+  changed_when: omb_result.rc != 0
+  ignore_errors: true
 
 - name: Copy .gitconfig
   ansible.builtin.copy:
