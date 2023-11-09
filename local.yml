@@ -16,6 +16,9 @@
     - name: Include Packages
       ansible.builtin.include_tasks: tasks/packages.yml
 
+    - name: Set up repos
+      ansible.builtin.include_tasks: tasks/repos.yml
+
     - name: Set up Environment
       ansible.builtin.include_tasks: tasks/environment.yml
 

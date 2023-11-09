@@ -1,0 +1,31 @@
+# Repo for MS VSCODE
+- name: Add sign key for Microsoft
+  block:
+    - name: Add Signing Key
+      ansible.builtin.get_url:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        dest: /etc/apt/trusted.gpg.d/microsoft.asc # Needs the asc extension
+        mode: '0644'
+        force: true
+
+    - name: Microsoft apt source
+      ansible.builtin.apt_repository:
+        repo: deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/microsoft.asc] https://packages.microsoft.com/repos/code stable main
+        state: present
+      notify: vscode
+
+# Repo for foo
+#- name: Add sign key for foo
+#  block:
+#    - name: Add Signing Key
+#      ansible.builtin.get_url:
+#        url: https://foo.com/asc
+#        dest: /etc/apt/trusted.gpg.d/foo.asc # Needs the asc extension
+#        mode: '0644'
+#        force: true
+#
+#    - name: Microsoft apt source
+#      ansible.builtin.apt_repository:
+#        repo: deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/foo.asc] https://foot.com/repos/bar stable main
+#        state: present
+#      notify: foo-bar
