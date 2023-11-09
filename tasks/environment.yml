@@ -21,6 +21,17 @@
   changed_when: omb_result.rc != 0
   ignore_errors: true
 
+
+- name: Set up personal git folder
+  ansible.builtin.file:
+    path: /home/{{ user }}/git-personal
+    state: directory
+
+- name: Set up work git folder
+  ansible.builtin.file:
+    path: /home/{{ user }}/git-work
+    state: directory
+
 - name: Copy .gitconfig
   ansible.builtin.copy:
     src: files/.gitconfig
