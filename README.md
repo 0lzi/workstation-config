@@ -2,12 +2,16 @@
 
 ## To Do
 - [ ] Fix Pip and install pip packages
-- [ ] Add snap packages install
-- [ ] Add homebrew packages install
+- [x] Add snap packages install
+- [ ] Install homebrew 
+    - [ ] Add hombrew packages install 
 - [x] Add check for .bashrc array so `custom` isn't added every run
 - [ ] Tweak to run on other distros
 - [ ] Customise terminal
 - [ ] Customise Wallpaper
+- [ ] Add Personal git folder
+    - [ ] Clone some useful repos
+- [ ] Add Work git folder
 - [ ] Set up taskbar
 - [ ] Tidy up
 
