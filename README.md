@@ -2,11 +2,14 @@
 
 ## To Do
 - [ ] Fix Pip and install pip packages
+- [ ] Add snap packages install
+- [ ] Add homebrew packages install
 - [x] Add check for .bashrc array so `custom` isn't added every run
 - [ ] Tweak to run on other distros
 - [ ] Customise terminal
 - [ ] Customise Wallpaper
 - [ ] Set up taskbar
+- [ ] Tidy up
 
 ### Pre-requisites
 1. Ubuntu base system ( for now )
