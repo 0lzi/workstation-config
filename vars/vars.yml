@@ -11,6 +11,7 @@ aptpackages:
   - apt-transport-https
   - wget
   - gpg
+  - curl
 
 
 #pippackages:
