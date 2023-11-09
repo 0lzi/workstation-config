@@ -12,7 +12,8 @@
       ansible.builtin.apt_repository:
         repo: deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/microsoft.asc] https://packages.microsoft.com/repos/code stable main
         state: present
-      notify: vscode
+      notify:
+        - vscode
 
 # Repo for foo
 #- name: Add sign key for foo
