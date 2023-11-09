@@ -17,6 +17,7 @@
   changed_when: omh_result.rc != 0
   ignore_errors: true
   tags: bash
+  become: false
 
 - name: Add sign key for Microsoft
   block:
