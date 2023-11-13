@@ -19,6 +19,9 @@
     - name: Set up Environment
       ansible.builtin.include_tasks: tasks/environment.yml
 
+    - name: Set up Git
+      ansible.builtin.include_tasks: tasks/git.yml
+
     - name: Set up user
       ansible.builtin.include_tasks: tasks/user.yml
 
