@@ -11,7 +11,7 @@
 - [ ] Customise Wallpaper
 - [ ] Add Personal git folder
 - [ ] Add Work git folder
-- [ ] Create ssh keypairs
+- [ ] Create ssh keypairs - https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_keypair_module.html
     - github
     - raspberry pi
 - [ ] Set up taskbar

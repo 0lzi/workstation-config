@@ -1,11 +1,11 @@
 [user]
-	name = 0lzi
+	name = oliver kelly
 	email = foolishhim@gmail.com
-	signingkey = 9BEBE3357E2F3D29
+	signingkey = B3B00B999255E3F6
 [init]
 	defaultBranch = main
 [commit]
 	gpgsign = true
 
-[includeIf "gitdir:~/git/"]
+[includeIf "gitdir:~/git-work/"]
     path = ~/.gitconfig_work
