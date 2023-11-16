@@ -16,7 +16,13 @@ aptpackages:
   - dconf-editor
 
 
-#pippackages:
-#  - hvac
+pippackages:
+  - hvac
+
+brewpackages:
+  - kubectl
+
+snappackage:
+  - signal-desktop # Look to move to repo
 
 user: oli
