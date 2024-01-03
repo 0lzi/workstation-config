@@ -26,16 +26,16 @@
   ansible.builtin.file:
     path: /home/{{ user }}/git-personal
     state: directory
-    owner: "{{ user }}
-    group: "{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: '0775'
 
 - name: Set up work git folder
   ansible.builtin.file:
     path: /home/{{ user }}/git-work
     state: directory
-    owner: "{{ user }}
-    group: "{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: '0775'
 
 - name: Copy .gitconfig
