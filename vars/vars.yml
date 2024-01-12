@@ -24,9 +24,10 @@ pippackages:
 
 pipxpackages:
   - ansible
+  - ansible-lint
 
 snappackage:
-  - kustomise
+  - kustomize
 
 brewpackages:
   - k9s

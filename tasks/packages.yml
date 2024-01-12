@@ -44,5 +44,4 @@
 - name: Install snaps
   community.general.snap:
     name: "{{ snappackage }}"
-    state: present
 #  with_items: "{{ snappackage }}"
