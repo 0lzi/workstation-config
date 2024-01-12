@@ -2,7 +2,7 @@
   ansible.builtin.package:
     name: "{{ aptpackages }}"
     state: present
-#  with_items: "{{ aptpackages }}"
+#  with_items: "{{ aptpackages }}" This method was alot slower
 
 - name: Check OhMyBash is installed
   ansible.builtin.stat:

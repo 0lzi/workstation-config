@@ -2,36 +2,37 @@
 - name: Git ansible
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/ansible.git'
-    dest: /home/{{ user }}/git-personal
+    dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
 
 - name: Git azure
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/azure.git'
-    dest: /home/{{ user }}/git-personal
+    dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
 
 - name: Git cisco
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/cisco-notes.git'
-    dest: /home/{{ user }}/git-personal
+    dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
 
 - name: Git scripts
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/scripts.git'
-    dest: /home/{{ user }}/git-personal
+    dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
 
 - name: Git notes
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/linux-notes.git'
-    dest: /home/{{ user }}/git-personal
+    dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
 
 - name: Git TF
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/terraform.git'
-    dest: /home/{{ user }}/git-personal
+    dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
+
 # Work Repos
