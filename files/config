@@ -52,11 +52,11 @@ Host pi5
 
 # Linux Servers
 	
-Host *
-	User oliver.kelly
-	CanonicalDomains .local
-	CanonicalizeHostname yes
-	StrictHostKeyChecking accept-new
+# Host *
+#	User oliver.kelly
+#	CanonicalDomains .local
+#	CanonicalizeHostname yes
+#	StrictHostKeyChecking accept-new
 
 ## Serial Port ##
 
