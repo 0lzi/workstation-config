@@ -70,3 +70,5 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: '0644'
+
+# Add wallpaper and change wallpaper
