@@ -19,7 +19,7 @@
     - name: Set up Environment
       ansible.builtin.include_tasks: tasks/environment.yml
 
-   - name: Set up user
+    - name: Set up user
       ansible.builtin.include_tasks: tasks/user.yml
 
     - name: Set up cron
