@@ -1,8 +1,8 @@
 - name: Install packages
   ansible.builtin.package:
-    name: "{{ item }}"
+    name: "{{ aptpackages }}"
     state: present
-  with_items: "{{ aptpackages }}"
+#  with_items: "{{ aptpackages }}"
 
 - name: Check OhMyBash is installed
   ansible.builtin.stat:
