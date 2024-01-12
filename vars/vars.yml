@@ -14,6 +14,8 @@ aptpackages:
   - curl
   - openssh-server
   - dconf-editor
+  - neovim
+  - tmux
 
 
 #pippackages:

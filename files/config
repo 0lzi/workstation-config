@@ -13,9 +13,9 @@ Host github.com
 
 ## Gitlab
 
-Host 
-	User Oliver.Kelly
-	IdentityFile ~/.ssh/gitlab_rsa
+# Host 
+#	User Oliver.Kelly
+#	IdentityFile ~/.ssh/gitlab_rsa
 
 ## SSH Pi  Config ##
 
