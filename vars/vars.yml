@@ -18,7 +18,8 @@ aptpackages:
   - tmux
 
 
-#pippackages:
-#  - hvac
+pippackages:
+  - hvac
+
 
 user: oli

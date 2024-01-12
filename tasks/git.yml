@@ -4,35 +4,71 @@
     repo: 'git@github.com:0lzi/ansible.git'
     dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
 
 - name: Git azure
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/azure.git'
     dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
 
 - name: Git cisco
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/cisco-notes.git'
     dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
 
 - name: Git scripts
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/scripts.git'
     dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
+
+- name: Git scripts
+  ansible.builtin.git:
+    repo: 'git@github.com:0lzi/scripts.git'
+    dest: /home/{{ user }}/git-personal/
+    key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
+
+- name: Git scripts
+  ansible.builtin.git:
+    repo: 'git@github.com:0lzi/scripts.git'
+    dest: /home/{{ user }}/git-personal/
+    key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
+
+- name: Git scripts
+  ansible.builtin.git:
+    repo: 'git@github.com:0lzi/scripts.git'
+    dest: /home/{{ user }}/git-personal/
+    key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
 
 - name: Git notes
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/linux-notes.git'
     dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
 
 - name: Git TF
   ansible.builtin.git:
     repo: 'git@github.com:0lzi/terraform.git'
     dest: /home/{{ user }}/git-personal/
     key_file: /home/{{ user }}/.ssh/github
+    clone: yes
+    update: yes
 
 # Work Repos

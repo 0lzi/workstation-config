@@ -22,12 +22,20 @@
   ansible.builtin.apt:
     deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
 
-
-
-
 #- name: Pip packages
 #  ansible.builtin.pip:
 #    name: "{{ item }}"
 #    state: present
 #  with_items: "{{ pippackages }}"
-#  executable: pip3
+
+# Install homebrew 
+#- community.general.homebrew:
+#    name: "{{ item }}"
+#    state: present
+#  with_items: "{{ brewpackages }}"
+
+#- name: Install snaps
+#  community.general.snap:
+#    name: "{{ item }}"
+#    state: present
+#  with_items: "{{ snappackage }}"
