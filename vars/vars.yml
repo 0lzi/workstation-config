@@ -20,6 +20,16 @@ aptpackages:
 
 pippackages:
   - hvac
+  - pipx
+
+pipxpackages:
+  - ansible
+
+snappackage:
+  - kustomise
+
+brewpackages:
+  - k9s
 
 
 user: oli
