@@ -19,10 +19,8 @@
   tags: bash
 
 - name: Install VSCODE
-  block:
-    - name: Install from linux-deb-x64
-      ansible.builtin.apt:
-      deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+  ansible.builtin.apt:
+    deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
 
 
 
