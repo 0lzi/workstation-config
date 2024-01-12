@@ -38,6 +38,7 @@
   community.general.homebrew:
     name: "{{ brewpackages }}"
     state: present
+  become: false
 #  with_items: "{{ brewpackages }}"
 
 - name: Install snaps
