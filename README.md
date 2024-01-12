@@ -1,10 +1,10 @@
 # Playbook to set up my Linux workstation
 
 ## To Do
-- [ ] Fix Pip and install pip packages
+- [x] Fix Pip and install pip packages
 - [x] Add snap packages install
 - [ ] Install homebrew 
-    - [ ] Add hombrew packages install 
+    - [x] Add hombrew packages install 
 - [x] Add check for .bashrc array so `custom` isn't added every run
 - [ ] Tweak to run on other distros
 - [ ] Customise terminal
