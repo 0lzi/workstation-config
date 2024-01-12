@@ -34,8 +34,8 @@
     state: present
 #  with_items: "{{ pipxpackages }}"
 
- # Install homebrew 
-- community.general.homebrew:
+- name: Install homebrew 
+  community.general.homebrew:
     name: "{{ brewpackages }}"
     state: present
 #  with_items: "{{ brewpackages }}"
