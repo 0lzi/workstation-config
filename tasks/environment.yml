@@ -9,13 +9,14 @@
     src: files/custom.aliases.sh
     dest: /home/{{ user }}/.oh-my-bash/custom/aliases
     owner: "{{ user }}"
-    group: "{{ user}}"
+    group: "{{ user }}"
     mode: '0644'
   tags: aliases
 
 # Fix to stop duplicate `custom` entries each time it runs
+# TODO : Change from shell to replace module
 - name: Update OMB .bashrc for custom aliases
-  shell: sed -i '/  general/ s/$/  \n\  custom/' /home/{{ user }}/.bashrc
+  ansible.builtin.shell: sed -i '/  general/ s/$/  \n\  custom/' /home/{{ user }}/.bashrc
   when: not omb_installed.stat.exists
   register: omb_result
   changed_when: omb_result.rc != 0
