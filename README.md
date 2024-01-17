@@ -16,6 +16,9 @@
     - raspberry pi
 - [ ] Set up taskbar
 - [ ] Tidy up
+- [ ] Create initial install script
+- [ ] Move some bits into roles
+- [ ] Add tags
 
 ### Pre-requisites
 1. Ubuntu base system ( for now )
