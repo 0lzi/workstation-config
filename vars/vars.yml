@@ -16,8 +16,9 @@ aptpackages:
   - dconf-editor
   - neovim
   - tmux
-
-
+  - jq
+  - screen
+  
 pippackages:
   - hvac
   - pipx
