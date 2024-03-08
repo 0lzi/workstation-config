@@ -8,4 +8,7 @@
 	gpgsign = true
 
 [includeIf "gitdir:~/git-work/"]
-    path = ~/.gitconfig_work
+  path = ~/.gitconfig_work
+
+[core]
+  editor=nvim
