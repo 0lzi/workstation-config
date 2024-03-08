@@ -21,17 +21,20 @@
 - name: Install VSCODE
   ansible.builtin.apt:
     deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-
+  when: not ansible_check_mode
+  
 - name: Pip packages
   ansible.builtin.pip:
     name: "{{ pippackages }}"
     state: present
+  when: not ansible_check_mode
 #  with_items: "{{ pippackages }}"
 
 - name: Pipx packages
   ansible.builtin.pip:
     name: "{{ pipxpackages }}"
     state: present
+  when: not ansible_check_mode
 #  with_items: "{{ pipxpackages }}"
 
 - name: Install homebrew
@@ -39,9 +42,11 @@
     name: "{{ brewpackages }}"
     state: present
   become: false
+  when: not ansible_check_mode
 #  with_items: "{{ brewpackages }}"
 
 - name: Install snaps
   community.general.snap:
     name: "{{ snappackage }}"
+  when: not ansible_check_mode
 #  with_items: "{{ snappackage }}"

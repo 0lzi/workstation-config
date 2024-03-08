@@ -6,7 +6,7 @@
 
 - name: Tmux dotfiles
   ansible.builtin.copy:
-    src: ../files/config/tmux/tmux.conf
+    src: ../files/.config/tmux/tmux.conf
     dest: /home/{{ user }}/.config/tmux/tmux.conf
 
 - name: Ensure .local/bin/scripts exists
@@ -19,14 +19,21 @@
     src: ../files/tmux-sessionizer
     dest: /home/{{ user }}/.local/bin/scripts
 
+- name: Check nerdfonts installed
+  stat: 
+    path: /usr/share/fonts/truetype/hack 
+  register: nerdfonts
+
 - name: Install nerdfonts
   ansible.builtin.unarchive:
     src: https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
     dest: /usr/share/fonts
     remote_src: true
+  when: not nerdfonts.stat.exists
 
 - name: Refresh font-cache
   ansible.builtin.shell: fc-cache -v -f
+  when: not nerdfonts.stat.exists
 
 - name: Install NvChad
   ansible.builtin.git:
@@ -34,3 +41,8 @@
     dest: /home/{{ user }}/.config/nvim
     depth: 1
     
+- name: Copy nvim config
+  ansible.builtin.copy:
+    src: ../files/.config/nvim/custom
+    recursive: true
+    dest: /home/{{ user}}/.config/nvim/lua/
