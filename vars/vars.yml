@@ -19,10 +19,13 @@ aptpackages:
   - jq
   - screen
   - fonts-hack-ttf
+  - fzf
   
 pippackages:
   - hvac
-  - pipx
+  - pipx 
+  - pipenv
+  - pyyaml
 
 pipxpackages:
   - ansible
@@ -33,6 +36,5 @@ snappackage:
 
 brewpackages:
   - k9s
-
 
 user: oli

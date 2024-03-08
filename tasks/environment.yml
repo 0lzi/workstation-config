@@ -38,6 +38,21 @@
     group: "{{ user }}"
     mode: '0775'
 
+- name: check gitconfig
+  stat:
+    path: /home/{{ user }}/.gitconfig
+    register: gitconfig 
+
+- name: check gitconfig work
+  stat:
+    path: /home/{{ user }}/.gitconfig_work
+    register: gitconfigwork 
+
+- name: check ssh config
+  stat:
+    path: /home/{{ user }}/.ssh/config
+    register: sshconfig 
+
 - name: Copy .gitconfig
   ansible.builtin.copy:
     src: files/.gitconfig
@@ -45,6 +60,7 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: '0644'
+  when: not gitconfig.stat exists
 
 - name: Copy .gitconfig_work
   ansible.builtin.copy:
@@ -53,6 +69,7 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: '0644'
+  when: not gitconfigwork.stat exists
 
 - name: Copy ~/.ssh/config
   ansible.builtin.copy:
@@ -61,6 +78,7 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: '0644'
+  when: not sshconfig.stat exists
 
 - name: Touch .hushlogin
   ansible.builtin.file:
