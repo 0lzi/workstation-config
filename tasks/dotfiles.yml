@@ -1,0 +1,36 @@
+- name: Tmux install
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tpm 
+    dest: /home/{{ user }}/.config/tmux/plugins/tpm
+
+
+- name: Tmux dotfiles
+  ansible.builtin.copy:
+    src: ../files/config/tmux/tmux.conf
+    dest: /home/{{ user }}/.config/tmux/tmux.conf
+
+- name: Ensure .local/bin/scripts exists
+  ansible.builtin.file:
+    path: /home/{{ user }}/.local/bin/scripts
+    state: directory
+
+- name: Copy tmux-sessionizer
+  ansible.builtin.copy:
+    src: ../files/tmux-sessionizer
+    dest: /home/{{ user }}/.local/bin/scripts
+
+- name: Install nerdfonts
+  ansible.builtin.unarchive:
+    src: https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
+    dest: /usr/share/fonts
+    remote_src: true
+
+- name: Refresh font-cache
+  ansible.builtin.shell: fc-cache -v -f
+
+- name: Install NvChad
+  ansible.builtin.git:
+    repo: https://github.com/NvChad/NvChad.git
+    dest: /home/{{ user }}/.config/nvim
+    depth: 1
+    

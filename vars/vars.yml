@@ -18,6 +18,7 @@ aptpackages:
   - tmux
   - jq
   - screen
+  - fonts-hack-ttf
   
 pippackages:
   - hvac
