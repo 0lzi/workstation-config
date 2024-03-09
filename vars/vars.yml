@@ -20,7 +20,7 @@ aptpackages:
   - screen
   - fonts-hack-ttf
   - fzf
-  -build-essential
+  - build-essential
   
 pippackages:
   - hvac
