@@ -43,5 +43,4 @@
 - name: Copy nvim config
   ansible.builtin.copy:
     src: ../files/.config/nvim/custom
-    recursive: true
     dest: /home/{{ user}}/.config/nvim/lua/
