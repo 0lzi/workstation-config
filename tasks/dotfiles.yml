@@ -3,7 +3,14 @@
     repo: https://github.com/tmux-plugins/tpm 
     dest: /home/{{ user }}/.tmux/plugins/tpm
   become: false
-  
+
+- name: Tmux directory
+  ansible.builtin.file:
+    dest: /home/{{ user }}/.config/tmux
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: Tmux dotfiles
   ansible.builtin.copy:
     src: ../files/.config/tmux/tmux.conf
