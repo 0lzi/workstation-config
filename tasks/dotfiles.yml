@@ -1,8 +1,7 @@
 - name: Tmux install
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tpm 
-    dest: /home/{{ user }}/.config/tmux/plugins/tpm
-
+    dest: /home/{{ user }}/.tmux/plugins/tpm
 
 - name: Tmux dotfiles
   ansible.builtin.copy:
