@@ -8,8 +8,8 @@
   ansible.builtin.copy:
     src: ../files/.config/tmux/tmux.conf
     dest: /home/{{ user }}/.config/tmux/tmux.conf
-    owner: {{ user }}
-    group: {{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: Ensure .local/bin/scripts exists
   ansible.builtin.file:
@@ -20,8 +20,8 @@
   ansible.builtin.copy:
     src: ../files/tmux-sessionizer
     dest: /home/{{ user }}/.local/bin/scripts
-    owner: {{ user }}
-    group: {{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
     
 - name: Check nerdfonts installed
   stat: 
@@ -50,5 +50,5 @@
   ansible.builtin.copy:
     src: ../files/.config/nvim/custom
     dest: /home/{{ user}}/.config/nvim/lua/
-    owner: {{ user }}
-    group: {{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
