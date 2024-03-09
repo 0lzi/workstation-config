@@ -20,6 +20,7 @@ aptpackages:
   - screen
   - fonts-hack-ttf
   - fzf
+  -build-essential
   
 pippackages:
   - hvac
@@ -37,5 +38,6 @@ snappackage:
 brewpackages:
   - k9s
   - neovim
+  - gcc
 
 user: oli
