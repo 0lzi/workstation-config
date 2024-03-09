@@ -40,11 +40,6 @@
 - name: Install homebrew
   ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   become: false
-
-- name: brew PATH
-  ansible.builtin.shell: |
-    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/vagrant/.bashrc &&
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   
 - name: Install homebrew packages
   community.general.homebrew:
