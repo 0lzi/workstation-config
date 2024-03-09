@@ -39,6 +39,7 @@
 
 - name: Install homebrew
   ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  become: false
   
 - name: Install homebrew packages
   community.general.homebrew:
