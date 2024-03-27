@@ -55,7 +55,7 @@
     
 - name: Copy nvim config
   ansible.builtin.copy:
-    src: ../files/.config/nvim/custom
+    src: ../files/.config/nvim/lua/custom
     dest: /home/{{ user}}/.config/nvim/lua/
     owner: "{{ user }}"
     group: "{{ user }}"
