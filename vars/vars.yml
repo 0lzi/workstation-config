@@ -43,10 +43,7 @@ snappackage:
 brewpackages:
   - k9s
   - neovim
-<<<<<<< Updated upstream
   - gcc
-=======
   - node
->>>>>>> Stashed changes
 
 user: oli
