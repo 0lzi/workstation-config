@@ -53,27 +53,16 @@
   ansible.builtin.shell: fc-cache -v -f
   when: not nerdfonts.stat.exists
 
-- name: Install NvChad
-  ansible.builtin.git:
-    repo: https://github.com/NvChad/starter.git
-    dest: /home/{{ user }}/.config/nvim
-    depth: 1
-  become: false
-
-- name: NvChad init
-  ansible.builtin.command: nvim -c "PlugInstall" -c ":qa!"
-  changed_when: false
-
-- name: Nvim custom dir
+- name: Nvim dir
   ansible.builtin.file:
-    dest: /home/{{ user }}/.config/nvim/lua/custom
+    dest: /home/{{ user }}/.config/nvim/
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
 
 - name: Copy nvim config
   ansible.builtin.copy:
-    src: files/.config/nvim/custom/ 
-    dest: /home/{{ user}}/.config/nvim/lua/custom/
+    src: files/.config/nvim/
+    dest: /home/{{ user}}/.config/nvim/
     owner: "{{ user }}"
     group: "{{ user }}"
