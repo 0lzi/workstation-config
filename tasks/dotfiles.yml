@@ -1,4 +1,4 @@
-- name: Tmux install
+- name: Tmux install tpm
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tpm 
     dest: /home/{{ user }}/.tmux/plugins/tpm
@@ -53,9 +53,16 @@
     depth: 1
   become: false
     
+- name: Nvim custom dir
+  ansible.builtin.file:
+    dest: /home/{{ user }}/.config/nvim/lua/custom
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: Copy nvim config
   ansible.builtin.copy:
-    src: ../files/.config/nvim/lua/custom
-    dest: /home/{{ user}}/.config/nvim/lua/
+    src: files/.config/nvim/custom/ 
+    dest: /home/{{ user}}/.config/nvim/lua/custom/
     owner: "{{ user }}"
     group: "{{ user }}"

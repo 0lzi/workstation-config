@@ -20,11 +20,12 @@ alias wgs="sudo wg"
 alias vi="nvim"
 alias vim="nvim"
 
-# Alias to fix lsblk snap loop devices on Ubuntu
-alias lsblk="lsblk | grep -v loop*"# Auto git pull when changing to folder
+#Alias to fix lsblk snap loop devices on Ubuntu
+alias lsblk="lsblk | grep -v loop*"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# Function to do a git pull when in a specified folder
+#Auto git pull when changing to folder
+#Function to do a git pull when in a specified folder
 #function cd() {
 #    builtin cd "$@"
 #    if [ "$PWD" = "/home/USER/GIT_FOLDER" ]; then

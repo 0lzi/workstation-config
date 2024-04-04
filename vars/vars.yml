@@ -14,7 +14,6 @@ aptpackages:
   - curl
   - openssh-server
   - dconf-editor
-  #  - neovim latest version via brew
   - tmux
   - jq
   - screen
@@ -26,7 +25,6 @@ aptpackages:
   - ipmitool
   - yubikey-manager
 
-  
 pippackages:
   - hvac
   - pipx 
