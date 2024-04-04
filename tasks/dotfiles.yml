@@ -30,6 +30,13 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     
+- name: Ensure .local/share/fonts exists
+  ansible.builtin.file:
+    dest: /home/{{ user }}/.local/share/fonts/hack
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: Check nerdfonts installed
   ansible.builtin.stat:
     path: /home/{{ user }}/.local/share/fonts/hack
