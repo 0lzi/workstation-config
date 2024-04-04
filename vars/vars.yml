@@ -20,15 +20,12 @@ aptpackages:
   - screen
   - fonts-hack-ttf
   - fzf
-<<<<<<< Updated upstream
   - build-essential
-=======
   - ripgrep
   - icedtea-netx # Java think for OLD IPMI 
   - ipmitool
   - yubikey-manager
 
->>>>>>> Stashed changes
   
 pippackages:
   - hvac
