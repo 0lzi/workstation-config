@@ -55,10 +55,14 @@
 
 - name: Install NvChad
   ansible.builtin.git:
-    repo: https://github.com/NvChad/NvChad.git
+    repo: https://github.com/NvChad/starter.git
     dest: /home/{{ user }}/.config/nvim
     depth: 1
   become: false
+
+- name: NvChad init
+  ansible.builtin.command: nvim -c "PlugInstall" -c ":qa!"
+  changed_when: false
 
 - name: Nvim custom dir
   ansible.builtin.file:
