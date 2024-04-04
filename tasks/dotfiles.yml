@@ -39,7 +39,7 @@
 
 - name: Check nerdfonts installed
   ansible.builtin.stat:
-    path: /home/{{ user }}/.local/share/fonts/hack
+    path: /home/{{ user }}/.local/share/fonts/hack/HackNerdFont-Mono-Regular.ttf
   register: nerdfonts
 
 - name: Install nerdfonts
