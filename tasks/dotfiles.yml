@@ -31,14 +31,14 @@
     group: "{{ user }}"
     
 - name: Check nerdfonts installed
-  stat: 
-    path: /usr/share/fonts/truetype/hack 
+  ansible.builtin.stat:
+    path: /home/{{ user }}/.local/share/fonts/hack
   register: nerdfonts
 
 - name: Install nerdfonts
   ansible.builtin.unarchive:
-    src: https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
-    dest: /usr/share/fonts
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ hackfont_ver }}/Hack.zip
+    dest: /home/{{ user }}/.local/share/fonts
     remote_src: true
   when: not nerdfonts.stat.exists
 
@@ -52,7 +52,7 @@
     dest: /home/{{ user }}/.config/nvim
     depth: 1
   become: false
-    
+
 - name: Nvim custom dir
   ansible.builtin.file:
     dest: /home/{{ user }}/.config/nvim/lua/custom

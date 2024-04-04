@@ -17,14 +17,13 @@ aptpackages:
   - tmux
   - jq
   - screen
-  - fonts-hack-ttf
   - fzf
   - build-essential
   - ripgrep
   - icedtea-netx # Java think for OLD IPMI 
   - ipmitool
   - yubikey-manager
-
+    
 pippackages:
   - hvac
   - pipx 
@@ -45,3 +44,5 @@ brewpackages:
   - node
 
 user: oli
+
+hackfont_ver: 3.2.0
