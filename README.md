@@ -26,14 +26,15 @@
 
 ```bash
 sudo apt update && sudo apt install git python3-pip python3-venv -y && python3 -m pip install --user pipx && python3 -m pipx ensurepath 
-
+```
+```
 # Logout/New session
 pipx install --include-deps ansible 
 ```
 3. Add user to passwordless sudo
 
 ```bash
-sudo echo "$USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USER
+sudo echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER
 ```
 4. Fist Use
 
