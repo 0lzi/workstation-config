@@ -82,7 +82,7 @@
 
 - name: Touch .hushlogin
   ansible.builtin.file:
-    dest: /home/{{ user }}.hushlogin
+    dest: /home/{{ user }}/.hushlogin
     state: touch
     owner: "{{ user }}"
     group: "{{ user }}"
