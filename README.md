@@ -3,14 +3,14 @@
 ## To Do
 - [x] Fix Pip and install pip packages
 - [x] Add snap packages install
-- [ ] Install homebrew 
+- [x] Install homebrew 
     - [x] Add hombrew packages install 
 - [x] Add check for .bashrc array so `custom` isn't added every run
 - [ ] Tweak to run on other distros
 - [ ] Customise terminal
-- [ ] Customise Wallpaper
-- [ ] Add Personal git folder
-- [ ] Add Work git folder
+- [x] Customise Wallpaper
+- [x] Add Personal git folder
+- [x] Add Work git folder
 - [ ] Create ssh keypairs - https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_keypair_module.html
     - github
     - raspberry pi
