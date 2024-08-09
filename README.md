@@ -19,6 +19,12 @@
 - [ ] Create initial install script
 - [ ] Move some bits into roles
 - [ ] Add tags
+- [ ] Add extra packages if on home desktop
+    - [ ] steam
+    - [ ] lutris
+    - [ ] discord
+    - [ ] spotify
+  
 
 ### Pre-requisites
 1. Ubuntu base system ( for now )
