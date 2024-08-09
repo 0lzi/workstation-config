@@ -10,7 +10,7 @@
   register: omb_installed
 
 - name: Install oh-my-bash
-  ansible.builtin.shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ansible.builtin.shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
   become: false
   when: not omb_installed.stat.exists
   register: omb_result
