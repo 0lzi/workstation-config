@@ -23,6 +23,14 @@ aptpackages:
   - icedtea-netx # Java think for OLD IPMI 
   - ipmitool
   - yubikey-manager
+  - flatpak
+
+desktop_packages_apt:
+  - steam-installer
+
+desktop_packages_snap:
+  - spotify
+  - discord
     
 pippackages:
   - hvac
