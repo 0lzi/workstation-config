@@ -17,6 +17,7 @@
     dest: /home/{{ user }}/.config/tmux/tmux.conf
     owner: "{{ user }}"
     group: "{{ user }}"
+    mode: "774"
 
 - name: Ensure .local/bin/scripts exists
   ansible.builtin.file:
