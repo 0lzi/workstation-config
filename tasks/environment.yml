@@ -87,5 +87,21 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: '0644'
+    
+- name: Copy root colour change file
+  ansible.builtin.copy:
+    src: files/bash_colours
+    dest: /root/.bash_colours
+    owner: root
+    group: root
+    mode: "0644"
 
+- name: Source colour change file in /root/.bashrc
+  ansible.builtin.blockinfile:
+    path: /root/.bashrc
+    block: |
+      source /root/.bash_colours
+    state: present
+    insertafter: EOF
+    
 # Add wallpaper and change wallpaper
