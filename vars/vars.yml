@@ -28,7 +28,7 @@ aptpackages:
 desktop: false
 
 desktop_packages_apt:
-  - steam-installer
+  - steam
 
 desktop_packages_snap:
   - spotify
