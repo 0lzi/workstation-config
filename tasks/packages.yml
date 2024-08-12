@@ -72,7 +72,7 @@
 
 - name: Install flatpak
   community.general.flatpak:
-    name: "{{ desktop_packages_snap }}"
+    name: "{{ desktop_packages_flatpak }}"
     state: present
   when: 
     - not ansible_check_mode
