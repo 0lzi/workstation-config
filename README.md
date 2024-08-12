@@ -1,6 +1,7 @@
 # Playbook to set up my Linux workstation
 
 ## To Do
+- [ ] Tweak for nobara linux/fedora
 - [x] Fix Pip and install pip packages
 - [x] Add snap packages install
 - [x] Install homebrew 
@@ -16,7 +17,7 @@
     - raspberry pi
 - [ ] Set up taskbar
 - [ ] Tidy up
-- [ ] Create initial install script
+- [x] Create initial install script <- Very hacky
 - [ ] Move some bits into roles
 - [ ] Add tags
 - [ ] Add extra packages if on home desktop
@@ -24,7 +25,7 @@
     - [ ] lutris
     - [ ] discord
     - [ ] spotify
-  
+- [ ] Tweak for nobara linux/fedora for desktop
 
 ### Pre-requisites
 1. Ubuntu base system ( for now )
@@ -46,8 +47,10 @@ sudo echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER
 
 ```bash
 # Main branch
-ansible-pull -o -U https://github.com/0lzi/workstation-config.git
+ansible-pull -o -U https://github.com/0lzi/workstation-config.git # -e 'desktop=true' If wanting to run on PC and have steam and other bits
+```
 
+```bash
 # Alt branch
 ansible-pull -o -U https://github.com/0lzi/workstation-config.git -C test1
 
