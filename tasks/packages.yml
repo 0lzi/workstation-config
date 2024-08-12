@@ -4,6 +4,13 @@
     state: present
 #  with_items: "{{ aptpackages }}" This method was alot slower
 
+- name: Install packages desktop
+  ansible.builtin.package:
+    name: "{{ desktop_packages_apt }}"
+    state: present
+#  with_items: "{{ aptpackages }}" This method was alot slower
+  when: desktop
+
 - name: Check OhMyBash is installed
   ansible.builtin.stat:
     path: /home/{{ user }}/.oh-my-bash
@@ -18,10 +25,10 @@
   ignore_errors: true
   tags: bash
 
-- name: Install VSCODE
-  ansible.builtin.apt:
-    deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-  when: not ansible_check_mode
+#- name: Install VSCODE
+#  ansible.builtin.apt:
+#    deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+#  when: not ansible_check_mode
   
 - name: Pip packages
   ansible.builtin.pip:
@@ -54,3 +61,19 @@
     name: "{{ snappackage }}"
   when: not ansible_check_mode
 #  with_items: "{{ snappackage }}"
+
+- name: Install snaps desktop
+  community.general.snap:
+    name: "{{ desktop_packages_snap }}"
+  when: 
+    - not ansible_check_mode
+    - desktop
+#  with_items: "{{ snappackage }}"
+
+- name: Install flatpak
+  community.general.flatpak:
+    name: "{{ desktop_packages_snap }}"
+    state: present
+  when: 
+    - not ansible_check_mode
+    - desktop

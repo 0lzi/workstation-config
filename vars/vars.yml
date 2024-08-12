@@ -25,12 +25,17 @@ aptpackages:
   - yubikey-manager
   - flatpak
 
+desktop: false
+
 desktop_packages_apt:
   - steam-installer
 
 desktop_packages_snap:
   - spotify
   - discord
+
+desktop_packages_flatpak:
+  - net.lutris.Lutris
     
 pippackages:
   - hvac
