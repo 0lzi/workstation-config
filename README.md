@@ -1,7 +1,6 @@
 # Playbook to set up my Linux workstation
 
 ## To Do
-- [ ] Tweak for nobara linux/fedora
 - [x] Fix Pip and install pip packages
 - [x] Add snap packages install
 - [x] Install homebrew 
