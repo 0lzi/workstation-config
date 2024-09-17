@@ -1,6 +1,7 @@
 # Playbook to set up my Linux workstation
 
 ## To Do
+- [ ] FIX - Ensure snap is installed
 - [x] Fix Pip and install pip packages
 - [x] Add snap packages install
 - [x] Install homebrew 
