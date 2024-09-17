@@ -49,11 +49,11 @@
   become: false
 
 - name: Add Homebrew to $PATH
-  shell: (echo; echo 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"') >> /home/oli/.bashrc" # FIX TO NICER SOLUTION
+  shell: NONINTERACTIVE=1 /bin/bash -c "(echo; echo 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"') >> /home/oli/.bashrc" "# FIX TO NICER SOLUTION
   become: false
   
 - name: Add Homebrew to to PATH
-  shell: eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"
+  shell: NONINTERACTIVE=1 /bin/bash -c "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\" "
   become: false
 
 - name: Install homebrew packages
