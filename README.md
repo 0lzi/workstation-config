@@ -2,6 +2,7 @@
 
 ## To Do
 - [ ] FIX - Ensure snap is installed
+- [ ] FIX - Add Hombrew to PATH
 - [x] Fix Pip and install pip packages
 - [x] Add snap packages install
 - [x] Install homebrew 
