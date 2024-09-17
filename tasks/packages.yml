@@ -47,7 +47,15 @@
 - name: Install homebrew
   ansible.builtin.shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   become: false
+
+- name: Add Homebrew to $PATH
+  shell: (echo; echo 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"') >> /home/oli/.bashrc" # FIX TO NICER SOLUTION
+  become: false
   
+- name: Add Homebrew to to PATH
+  shell: eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"
+  become: false
+
 - name: Install homebrew packages
   community.general.homebrew:
     name: "{{ brewpackages }}"
