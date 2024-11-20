@@ -5,6 +5,7 @@ aptpackages:
   - powerline
   - fonts-powerline
   - python3-venv
+  - pipenv
   - tree
   - git
   - lsof
