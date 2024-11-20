@@ -20,7 +20,7 @@ aptpackages:
   - fzf
   - build-essential
   - ripgrep
-  - icedtea-netx # Java think for OLD IPMI 
+  - icedtea-netx # Java think for OLD IPMI
   - ipmitool
   - yubikey-manager
   - flatpak
@@ -36,10 +36,10 @@ desktop_packages_snap:
 
 desktop_packages_flatpak:
   - net.lutris.Lutris
-    
+
 pippackages:
   - hvac
-  - pipx 
+  - pipx
   - pipenv
   - pyyaml
 
