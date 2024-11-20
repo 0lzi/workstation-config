@@ -25,6 +25,7 @@ packages=(
 install_with_apt() {
   echo "Using apt to install packages..."
   sudo apt update
+  sudo apt upgrade -y
   sudo apt install -y "${packages[@]}"
 }
 
@@ -65,3 +66,5 @@ else
     echo "Invalid input. Please enter either 'desktop' or 'laptop'."
     exit 1
 fi
+
+echo "Reboot may be required..."
