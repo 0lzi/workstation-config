@@ -29,7 +29,7 @@ function _omb_theme_PROMPT_COMMAND() {
   local python_venv
   _omb_prompt_get_python_venv
   # PS1="${arrow}  ${user_name} ${base_directory} "
-  PS1="${base} ${user_name} ${base_directory} ${python_venv} ${scm_info:+$scm_info}\n ${arrow} $_omb_prompt_normal"
+  PS1="${base} ${user_name}@ \H ${base_directory} ${python_venv} ${scm_info:+$scm_info}\n ${arrow} $_omb_prompt_normal"
 
 }
 
