@@ -25,11 +25,11 @@
   ignore_errors: true
   tags: bash
 
-#- name: Install VSCODE
-#  ansible.builtin.apt:
-#    deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-#  when: not ansible_check_mode
-  
+# - name: Install VSCODE
+#   ansible.builtin.apt:
+#     deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+#   when: not ansible_check_mode
+
 - name: Pip packages
   ansible.builtin.pip:
     name: "{{ pippackages }}"
@@ -51,7 +51,7 @@
 - name: Add Homebrew to $PATH
   shell: NONINTERACTIVE=1 /bin/bash -c "(echo; echo 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"') >> /home/{{ user }}/.bashrc" # FIX TO NICER SOLUTION
   become: false
-  
+
 - name: Add Homebrew to to PATH
   shell: NONINTERACTIVE=1 /bin/bash -c "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\" "
   become: false
@@ -73,7 +73,7 @@
 - name: Install snaps desktop
   community.general.snap:
     name: "{{ desktop_packages_snap }}"
-  when: 
+  when:
     - not ansible_check_mode
     - desktop
 #  with_items: "{{ snappackage }}"
@@ -82,6 +82,6 @@
   community.general.flatpak:
     name: "{{ desktop_packages_flatpak }}"
     state: present
-  when: 
+  when:
     - not ansible_check_mode
     - desktop
