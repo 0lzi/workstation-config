@@ -15,18 +15,24 @@
 
     - name: Include Packages
       ansible.builtin.include_tasks: tasks/packages.yml
+      tags: packages
 
     - name: Include Wallpaper
       ansible.builtin.include_tasks: tasks/wallpaper.yml
+      tags: wallpaper
 
     - name: Set up Environment
       ansible.builtin.include_tasks: tasks/environment.yml
+      tags: env
 
     - name: Set up dot files
       ansible.builtin.include_tasks: tasks/dotfiles.yml
+      tags: dotfiles
 
     - name: Set up user
       ansible.builtin.include_tasks: tasks/user.yml
+      tags: user
 
     - name: Set up cron
       ansible.builtin.include_tasks: tasks/cron.yml
+      tags: cron
