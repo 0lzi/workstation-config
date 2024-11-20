@@ -21,7 +21,7 @@ aptpackages:
   - fzf
   - build-essential
   - ripgrep
-  - icedtea-netx # Java think for OLD IPMI
+  - icedtea-netx # Java thing for OLD IPMI
   - ipmitool
   - yubikey-manager
   - flatpak
@@ -52,11 +52,18 @@ snappackage:
   - kustomize
 
 brewpackages:
+  - kubectl
   - k9s
+  - kustomize
   - neovim
   - gcc
   - node
+  - lazygit
+  - marp-cli
+  - terraform
+  - helm
+  - hugo
 
 user: oli
 
-hackfont_ver: 3.2.0
+hackfont_ver: 3.3.0
