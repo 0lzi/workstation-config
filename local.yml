@@ -8,6 +8,9 @@
   pre_tasks:
     - name: Update repositories
       ansible.builtin.apt:
+        name: "*"
+        state: latest
+        upgrade: "yes"
         update_cache: true
       changed_when: false
 
