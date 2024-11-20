@@ -63,6 +63,7 @@ brewpackages:
   - terraform
   - helm
   - hugo
+  - pyenv
 
 user: oli
 
