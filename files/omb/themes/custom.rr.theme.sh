@@ -25,11 +25,21 @@ function _omb_theme_PROMPT_COMMAND() {
   local SCM_THEME_PROMPT_CLEAN="${_omb_prompt_bold_green} ✓${_omb_prompt_reset_color}"
   local SCM_THEME_PROMPT_DIRTY="${_omb_prompt_bold_red} ✗${_omb_prompt_reset_color}"
 
+# Check if in nix dev shell
+  if [[ -n "$IN_NIX_SHELL" ]]; then
+    if [[ -n "$TEMP" && "$TEMP" =~ nix-shell\.(.*) ]]; then
+      nix_env="${_omb_prompt_bold_purple}nix-shell:(${_omb_prompt_reset_color}${BASH_REMATCH[1]}${_omb_prompt_bold_purple})${_omb_prompt_reset_color}"
+    else
+      nix_env="${_omb_prompt_bold_purple}nix-shell${_omb_prompt_reset_color} "
+    fi
+  fi
+#
+
   local scm_info=$(scm_prompt_info)
   local python_venv
   _omb_prompt_get_python_venv
   # PS1="${arrow}  ${user_name} ${base_directory} "
-  PS1="${base} ${user_name}@\H ${base_directory} ${python_venv} ${scm_info:+$scm_info}\n ${arrow} $_omb_prompt_normal"
+  PS1="${base} ${user_name}@\H ${base_directory} ${nix_env}${python_venv} ${scm_info:+$scm_info}\n ${arrow} $_omb_prompt_normal"
 
 }
 
