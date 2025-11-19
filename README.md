@@ -33,7 +33,7 @@
 2. Install `git`, `python3-pip`, `python3-venv` , `ansible`
 
 ```bash
-sudo apt update && sudo apt install git python3-pip python3-venv -y && python3 -m pip install --user pipx && python3 -m pipx ensurepath 
+sudo apt update && sudo apt install git python3-pip python3-venv -y && python3 -m pip install --user pipx && python3 -m pipx ensurepath
 ```
 ```
 # Logout/New session

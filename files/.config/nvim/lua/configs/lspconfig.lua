@@ -12,7 +12,8 @@ local servers = { "html",
   "ansiblels",
   "helm_ls",
   "terraformls",
-  "yamlls"
+  "yamlls",
+  "gitlab_ci_ls"
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
