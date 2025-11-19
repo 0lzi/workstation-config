@@ -4,7 +4,7 @@
     dest: /usr/share/backgrounds/ansible-wallpaper.png
     owner: root
     group: root
- 
+
 - name: set wallpaper
   become_user: "{{ user }}"
   dconf:

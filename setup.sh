@@ -6,7 +6,7 @@ echo "Starting inital setup"
 
 # Check if an argument was provided
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 [desktop|laptop]"
+    echo "Usage: $0 [desktop|laptop|terminal]"
     exit 1
 fi
 
@@ -60,6 +60,9 @@ if [ "$device_type" == "desktop" ]; then
     echo "Running pull for desktop..."
     ansible-pull -U https://github.com/0lzi/workstation-config.git -e 'desktop=true'
 elif [ "$device_type" == "laptop" ]; then
+    echo "Running pull for laptop..."
+    ansible-pull -U https://github.com/0lzi/workstation-config.git -e 'laptop=true'
+elif [ "$device_type" == "terminal" ]; then
     echo "Running pull for laptop..."
     ansible-pull -U https://github.com/0lzi/workstation-config.git
 else

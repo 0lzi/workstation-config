@@ -4,6 +4,14 @@
     search_string: 'OSH_THEME='
     line: OSH_THEME="rr"
 
+- name: Custom rr directory
+  ansible.builtin.file:
+    path: /home/{{ user }}/.oh-my-bash/custom/themes/rr
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0644'
+
 - name: Copy Custom rr theme
   ansible.builtin.copy:
     src: files/omb/themes/custom.rr.theme.sh

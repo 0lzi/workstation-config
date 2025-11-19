@@ -21,6 +21,9 @@
     - name: Include Wallpaper
       ansible.builtin.include_tasks: tasks/wallpaper.yml
       tags: wallpaper
+      when:
+        - desktop
+        - laptop
 
     - name: Set up Environment
       ansible.builtin.include_tasks: tasks/environment.yml
