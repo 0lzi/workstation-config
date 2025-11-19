@@ -26,6 +26,7 @@ aptpackages:
   - yubikey-manager
   - flatpak
   - gcc-11
+  - unzip
 
 desktop: false
 
