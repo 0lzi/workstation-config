@@ -1,44 +1,30 @@
--- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
-
-
-local lspconfig = require "lspconfig"
-
--- EXAMPLE
-local servers = { "html",
-  "cssls",
+-- local nvlsp = require("nvchad.configs.lspconfig")
+--
+-- local capabilities = nvlsp.capabilities
+-- local on_attach = nvlsp.on_attach
+--
+local servers = {
   "bashls",
   "dockerls",
   "ansiblels",
   "helm_ls",
   "terraformls",
-  "yamlls",
-  "gitlab_ci_ls"
-}
-local nvlsp = require "nvchad.configs.lspconfig"
-
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
-
-lspconfig.ansiblels.setup {
-  filetypes = { "yaml", "yml" },
+  "pyright",
+  "gitlab_ci_ls",
 }
 
-vim.filetype.add {
+vim.lsp.enable(servers)
+
+-- Jinja filetype detection
+vim.filetype.add({
   extension = {
-    jinja = 'jinja',
-    jinja2 = 'jinja',
-    j2 = 'jinja',
+    jinja = "jinja",
+    jinja2 = "jinja",
+    j2 = "jinja",
   },
-}
-
-lspconfig.jinja_lsp.setup {
+})
+vim.lsp.config("jinja_lsp", {
   filetypes = { "jinja", "j2", "jinja2" },
   name = 'jinja_lsp',
   cmd = { 'jinja-lsp' },
@@ -46,10 +32,13 @@ lspconfig.jinja_lsp.setup {
       return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
     end,
   single_file_support = true,
-}
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+})
+-- --
+-- Custom ansible config
+vim.lsp.config("ansiblels", {
+  filetypes = { "yaml", "yml" },
+})
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
+-- read :h vim.lsp.config for changing options of lsp servers
